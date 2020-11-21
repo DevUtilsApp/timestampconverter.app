@@ -1,37 +1,53 @@
-## Welcome to GitHub Pages
+UNIX Timestamp Converter
+========================
 
-You can use the [editor on GitHub](https://github.com/DevUtilsApp/timestampconverter.app/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+Convert UNIX Timestamp to a human-friendly format without online tools. [DevUtils.app](https://devutils.app) allows you to quickly turn a UNIX Timestamp into a human-friendly format. You can also inspect more information from the datetime like relative time (e.g., xx minutes ago), ISO formatted string, or check the current date of the week, week of the year, etc...
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+<p align="center">
+  <img src="https://devutils.app/assets/demo-unix-dark.png" alt="DevUtils.app: Unix Timestamp Converter macOS app"/>
+  <br/>
+  <a href="https://devutils.app/">🚀  Download</a> | <a href="https://devutils.app/demo">🎬  Demo & Screenshots</a> | <a href="https://github.com/DevUtilsApp/DevUtils-app">📝  View source</a>
+</p>
 
-### Markdown
+Convert UNIX timestamp
+----------------------
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+You can convert timestamps from anywhere in your macOS (terminal, in email, web browser,...). Activate the app by:
 
-```markdown
-Syntax highlighted code block
+* Copy text ► Press ⌃⌥⌘Space `(Or your own customized hotkey, up to you)`
+* Copy text ► Click to icon <img src="https://devutils.app/menu-icon-dark.png" alt="DevUtils.app status bar icon" width="28px" /> in the status bar
+* Select text ► Right-click ► "Inspect in DevUtils.app" `(This menu appears after you install the app)`
 
-# Header 1
-## Header 2
-### Header 3
+Input
+-----
 
-- Bulleted
-- List
+Unix Time Converter received one input. The input can be in the following format:
 
-1. Numbered
-2. List
+*   Standard UNIX timestamp (seconds since epoch).
+*   Milliseconds since epoch.
+*   ISO date format.
+*   The tool also tries to parse the input using popular formats like `yyyy/mm/dd` when possible.
 
-**Bold** and _Italic_ and `Code` text
+You can also use the "Now" button to set the current timestamp, which is very convenient when you need to grab the current timestamp as a string.
 
-[Link](url) and ![Image](src)
-```
+Output
+------
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+If the input is valid, the following information will be returned in the output:
 
-### Jekyll Themes
+*   The datetime rendered as local time in human-friendly format.
+*   The datetime in ISO 8601 format.
+*   The relative time compares to the current time (e.g., 3sec ago).
+*   The UNIX time format: for when the input is in ISO format.
+*   Day of the year.
+*   Week of the year.
+*   Whether the year is a leap year or not.
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/DevUtilsApp/timestampconverter.app/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+Options
+-------
 
-### Support or Contact
+When you activate the app, DevUtils will inspect your clipboard content and automatically select the UNIX Timestamp Converter if the content is a valid UNIX Timestamp that falls within a certain range.
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+![DevUtils.app: Unix Timestamp Converter macOS app](https://devutils.app/assets/settings/setting-unix-time-converter.png)
+
+By default, the range is `946684799-32503593600`, corresponding to the first second of the year 2000 to the last second of the year 3000. You can configure this to your own value if you prefer to.
